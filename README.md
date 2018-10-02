@@ -6,7 +6,7 @@ A ReactJS web app that analyses images and text, and lets users perform context-
 
 | Adithya N R             | Apeksha Joshi                    | Ganavi J                        |
 |-------------------------|----------------------------------|---------------------------------|
-| <img src="https://github.com/AdithyaBhat17.png"/> | <img src="https://github.com/apeksha-joshi.png"/> | img src="https://github.com/ganavee.png"/> |
+| <img src="https://github.com/AdithyaBhat17.png"/> | <img src="https://github.com/apeksha-joshi.png"/> | <img src="https://github.com/ganavee.png"/> |
 | https://adithyabhat.com | https://github.com/apeksha-joshi | https://linkedin.com/in/ganavee |
 
 ## License
