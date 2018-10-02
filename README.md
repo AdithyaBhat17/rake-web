@@ -2,12 +2,11 @@
 
 A ReactJS web app that analyses images and text, and lets users perform context-aware actions on the results. This app uses Firebase Authentication and Firebase Cloud Firestore for core functionality.
 
-## Developed By
+## Contributors
 
-| Adithya N R             | Apeksha Joshi                    | Ganavi J                        |
-|-------------------------|----------------------------------|---------------------------------|
-| <img src="https://github.com/AdithyaBhat17.png"/> | <img src="https://github.com/apeksha-joshi.png"/> | <img src="https://github.com/ganavee.png"/> |
-| https://adithyabhat.com | https://github.com/apeksha-joshi | https://linkedin.com/in/ganavee |
+[Adithya NR](https://adithyabhat.com)  -  UI/UX Designer, Front-End Developer  
+[Apeksha Joshi](https://github.com/apeksha-joshi)  -  Full Stack Developer   
+[Ganavi J](https://linkedin.com/in/ganavee)  -  Full Stack Developer 
 
 ## License
 
