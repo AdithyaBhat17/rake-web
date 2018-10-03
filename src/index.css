@@ -1,3 +1,26 @@
+@font-face{
+  src: url(./Assets/fonts/Wavehaus-158ExtraBold.otf);
+  font-family: Wavehaus;
+}
+
+@font-face{
+  src: url(./Assets/fonts/bold.otf);
+  font-family: manrope;
+  font-weight: bold;
+}
+
+@font-face{
+  src: url(./Assets/fonts/light.otf);
+  font-family: manrope;
+  font-weight: lighter;
+}
+
+@font-face{
+  src: url(./Assets/fonts/regular.otf);
+  font-family: manrope;
+  font-weight: normal;
+}
+
 html{
   height:100%;
 }
@@ -5,7 +28,8 @@ html{
 body{
   margin: 0;
   font-size: 16px;
-  font-family: Rubik;
+  font-family: manrope;
+  overflow-x:hidden; 
 }
 
 p{
@@ -20,9 +44,10 @@ p{
 }
 
 .navbar-brand{
-  color: #17165c  !important; 
+  color: #2522a6 !important; 
   font-weight: bold;
   font-size: 2em;
+  font-family: Wavehaus;
 }
 
 .navbar-default .navbar-toggle {
@@ -30,7 +55,7 @@ p{
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #17165c;
+  background-color: #2522A6;
 }
 
 .icon-bar:nth-child(3){
@@ -58,12 +83,12 @@ img{
 
 .tagline, .about-site{
   text-align: left;
-  color:#17165c;
+  color:#2522A6;
 }
 
 .tagline{
   font-weight: bolder;
-  margin-top:20vh;
+  margin-top:15vh;
 }
 
 .hero{
@@ -83,10 +108,14 @@ img{
 .download-app{
   text-decoration: none;
   color: #fff;
-  background-color: #17165c;
-  box-shadow: 5px 5px 5px 0 rgba(42, 67, 36, 0.08);
+  background-color: #2522A6;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
   border-radius: 30px;
   padding: 12px 25px;
+}
+
+.arrowdown{
+  width: 25px;
 }
 
 
