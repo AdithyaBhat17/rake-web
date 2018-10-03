@@ -21,6 +21,11 @@
   font-weight: normal;
 }
 
+a,a:hover{
+  text-decoration: none;
+  color:#fff;
+}
+
 html{
   height:100%;
 }
