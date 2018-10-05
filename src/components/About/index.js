@@ -14,7 +14,7 @@ export default function About(){
                     <div className="thumbnail-about animated fadeInUp">
                         <img src={abouthero} alt="Adithya NR"/>
                         <h5>Adithya NR</h5>
-                        <h6>UI/UX Designer</h6>
+                        <h6>UI Engineer</h6>
                         <p>
                             <i className="fab fa-linkedin"></i> &nbsp;
                             <i className="fab fa-twitter"></i> &nbsp;
