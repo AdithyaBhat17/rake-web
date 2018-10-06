@@ -21,6 +21,10 @@
   font-weight: normal;
 }
 
+.logo{
+  width: 80px;
+}
+
 a,a:hover{
   text-decoration: none;
   color:#fff;
@@ -49,6 +53,7 @@ p{
 }
 
 .navbar-brand{
+  margin-top: -6px; 
   color: #2522a6 !important; 
   font-weight: bold;
   font-size: 2em;
@@ -80,6 +85,7 @@ p{
   background: url('./Assets/background-img.png');
   height: 100vh;
   background-position: -30% 75%;
+  background-color: #f5f5f8;
 }
 
 img{
@@ -108,6 +114,9 @@ img{
   text-align: center;
   color: #fff !important;
   font-weight: bold;
+  font-size: 0.9em;
+  margin-top: 5px;
+  text-transform: uppercase;
 }
 
 .download-app{
@@ -123,19 +132,24 @@ img{
   width: 25px;
 }
 
+.navbar-toggle{
+  margin-top:12px;
+}
+
 
 @media screen and (max-width: 768px){
   .navbar-default{
     padding: 5px !important;
   }
   .navbar-right>li>a{
-    color: #17165c !important;
+    color: #2522a6 !important;
   }
   .tagline, .hero{
     margin-top: 20px;
   }
   .App{
     background: none;
+    height: 100%;
   }
   p{
     width: 100% !important;

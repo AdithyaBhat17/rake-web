@@ -6,6 +6,10 @@
     font-size: 3em;
 }
 
+a:focus{
+    color:#fff;
+}
+
 .thumbnail-about{
     text-align: center;
     box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.2);

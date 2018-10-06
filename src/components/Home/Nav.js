@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../Assets/rakelogoblack.png';
 
 export default function Nav({noNav}) {
     return (
@@ -12,7 +13,9 @@ export default function Nav({noNav}) {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand animated fadeInDown" href="/">rake</a>
+                <a className="navbar-brand animated fadeInDown" href="/">
+                    <img className="logo" src={logo} alt="rake"/>
+                </a>
                 </div>
                 <div className="collapse navbar-collapse animated fadeInDown" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right animated fadeIn">                        
