@@ -1,6 +1,6 @@
 # rake-web-app
 
-A ReactJS web app that analyses images and text, and lets users perform context-aware actions on the results. This app uses Firebase Authentication and Firebase Cloud Firestore for core functionality. [test](https://rake.now.sh)
+A ReactJS web app that analyses images and text, and lets users perform context-aware actions on the results. This app uses Firebase Authentication and Firebase Cloud Firestore for core functionality. [test the web app here](https://rake.now.sh)(still in progress)
 
 ## Contributors
 
