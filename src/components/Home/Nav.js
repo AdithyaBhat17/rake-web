@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/rakelogoblack.png';
 
-export default function Nav({noNav}) {
+export default function Nav() {
     return (
         <nav className="navbar navbar-default">
             <div className="container">
@@ -20,7 +20,7 @@ export default function Nav({noNav}) {
                 <div className="collapse navbar-collapse animated fadeInDown" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right animated fadeIn">                        
                         <li><Link to="/about">About Us</Link></li>
-                        <li><a href="/">Login</a></li>         
+                        <li><Link to="/login">Login</Link></li>         
                     </ul>
                 </div>
             </div>
