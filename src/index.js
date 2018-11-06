@@ -5,6 +5,7 @@ import './index.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
+import Login from './components/Login';
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
         <React.Fragment>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
+            <Route path="/login" component={Login}/>
         </React.Fragment>
     </Router>,
  document.getElementById('root'));
