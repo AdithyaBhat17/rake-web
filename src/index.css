@@ -121,11 +121,12 @@ img{
 
 .download-app{
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
   background-color: #2522A6;
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
   border-radius: 30px;
   padding: 12px 25px;
+  border: none;
 }
 
 .arrowdown{
@@ -136,6 +137,52 @@ img{
   margin-top:12px;
 }
 
+/* login form */
+.form{
+  text-align: left;
+}
+
+label,input{
+  color: #2522A6 !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2522A6 !important;
+  opacity: 0.6; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #2522A6 !important
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #2522A6 !important
+}
+
+.form{
+  margin-top:15px
+}
+
+.form-control{
+  border: 0 !important;
+  background-color: transparent !important;
+  border-bottom: 2px solid #2522A6 !important;
+  width: 80%;
+  outline: none !important;
+  border-radius: 0;
+  box-shadow: 0 0 0 !important;
+  color: #2522A6 !important;
+}
+
+.submit{
+    text-decoration: none;
+    color: #fff !important;
+    background-color: #2522A6;
+    box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+    border-radius: 30px;
+    padding: 10px 25px;
+    border: none;
+}
 
 @media screen and (max-width: 768px){
   .navbar-default{
@@ -146,6 +193,20 @@ img{
   }
   .tagline, .hero{
     margin-top: 20px;
+  }
+  h2{
+    margin-top:5px !important;
+    text-align: center !important;
+  }
+  .form{
+    margin-top: 20px
+  }
+  .submit{
+    display: block;
+    margin: 0 auto;
+  }
+  .form-control{
+    width: 100%;
   }
   .App{
     background: none;
