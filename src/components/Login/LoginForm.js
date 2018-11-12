@@ -1,30 +1,26 @@
 import React from 'react';
-import login from '../../Assets/login.svg';
+import { Link } from 'react-router-dom';
+import searchicon from '../../Assets/search.svg'; 
 
 export default class LoginForm extends React.Component{
     render(){
         return(
             <div className="container">
-                <div className="row">
-                    <div className="col-md-6 col-sm-12">
-                        <h2 className="tagline">Lorem ipsum dolor.</h2>
-                        <form className="form">
-                            <div className="form-group">
-                                <label htmlFor="Username">USERNAME</label>
-                                <input type="email" className="form-control" placeholder="mikewazowski@gmail.com"/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="Password">PASSWORD</label>
-                                <input type="password" className="form-control" placeholder="******"/>
-                            </div>
-                            <input type="submit" className="submit" value="LOGIN"/>
-                        </form>
+                <form className="form animated fadeIn">
+                    <h2 className="tagline-center">Welcome back!</h2>
+                    <div className="form-group">
+                        <input type="email" className="form-control" placeholder="EMAIL"/>
                     </div>
-                    <div className="col-md-6 col-sm-12">
-                        <img src={login} alt="login" className="hero"/>
+                    <div className="form-group">
+                        <input type="password" className="form-control" placeholder="PASSWORD"/>
                     </div>
-                </div>                
-            </div>            
+                    <p>
+                        <input type="submit" className="submit" value="GET IN"/> &nbsp; or&nbsp;
+                        <button className="join">Get in with <img className="googleicon" src={searchicon} alt="login with google"/></button>
+                    </p>
+                    <Link className="newhere" to="/join">New here? sign up!</Link>
+                </form>
+            </div>           
         );
     }
 } 
