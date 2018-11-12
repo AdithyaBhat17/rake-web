@@ -76,6 +76,10 @@ p{
   width: 70%;
 }
 
+.navbar-right>li>.lognav{
+  color: #2522A6 !important;
+}
+
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
   background-color: transparent;
 }
@@ -138,29 +142,51 @@ img{
 }
 
 /* login form */
-.form{
-  text-align: left;
-}
 
-label,input{
+input{
   color: #2522A6 !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #2522A6 !important;
-  opacity: 0.6; /* Firefox */
+  opacity: 0.8; /* Firefox */
+  font-weight: bold;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #2522A6 !important
+  color: #2522A6 !important;
+  font-weight: bold;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #2522A6 !important
+  color: #2522A6 !important;
+  font-weight: bold;
 }
 
 .form{
-  margin-top:15px
+  display: block;
+  margin:15px auto;
+  width: 60%;
+  box-shadow: 0 0 25px 1px rgba(46,61,73,.2);
+  padding: 50px 100px;
+  
+}
+
+.tagline-center{
+  text-align: center;
+  color: #2522A6;
+  font-weight: bold;
+  font-family: manrope;
+}
+
+.newhere,.newhere:hover,.newhere:focus,.newhere:active{
+  color: #2522A6;
+  font-size: 12px;
+  display: block;
+  margin: 15px auto;
+  text-align: center;
+  font-weight: lighter;
+  font-family: manrope;
 }
 
 .form-control{
@@ -168,19 +194,37 @@ label,input{
   background-color: transparent !important;
   border-bottom: 2px solid #2522A6 !important;
   width: 80%;
+  padding-left: 0; 
+  margin: 30px auto;
   outline: none !important;
   border-radius: 0;
   box-shadow: 0 0 0 !important;
   color: #2522A6 !important;
 }
 
+.form > p{
+  text-align: center;
+  color: #2522A6;
+} 
+
+.googleicon{
+  width: 15px;
+}
+
+.join{
+  background: none;
+  border: none; 
+}
+
 .submit{
     text-decoration: none;
     color: #fff !important;
+    display: inline;
     background-color: #2522A6;
     box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
     border-radius: 30px;
     padding: 10px 25px;
+    margin: 5px auto;
     border: none;
 }
 
@@ -202,9 +246,19 @@ label,input{
     margin-top: 20px
   }
   .submit{
-    display: block;
+    display: inline;
     margin: 0 auto;
   }
+
+  .form{
+    padding: 30px;
+    width: 100%;
+  }
+
+  .googleicon{
+    margin-top: -1px;
+  }
+
   .form-control{
     width: 100%;
   }
@@ -215,6 +269,16 @@ label,input{
   p{
     width: 100% !important;
     margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px){
+  .form{
+    width: 70%;
+  }
+
+  .form-control{
+    width: 100%;
   }
 }
 
@@ -236,6 +300,9 @@ label,input{
   }
   img{
     max-width: 110%;
+  }
+  .form{
+    margin-top: 10vh;
   }
 }
 
@@ -262,6 +329,21 @@ label,input{
   }
   img{
     max-width: 120%;
+  }
+  .form{
+    padding: 100px 75px;
+  }
+  .googleicon{
+    margin-top: -3px;
+  }
+  .tagline-center{
+    font-size: 2em;
+  }
+  .form-control{
+    font-size: 18px;
+  }
+  .newhere{
+    font-size: 16px;
   }
 }
 
@@ -294,6 +376,16 @@ label,input{
   }
   img{
     max-width: 120%;
+  }
+  .googleicon{
+    width: 20px;
+  }
+  .form-control{
+    font-size: 21px;
+    margin: 40px auto;
+  }
+  .newhere{
+    font-size: 18px;
   }
 }
 
