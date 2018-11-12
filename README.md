@@ -24,3 +24,6 @@ A ReactJS web app that analyses images and text, and lets users perform context-
     See the License for the specific language governing permissions and
     limitations under the License.
     
+## Terms of Service
+
+[Rake ToS](https://raw.githubusercontent.com/bapspatil/privacy/master/Rake-Terms-Of-Service.md)
