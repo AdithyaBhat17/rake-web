@@ -13,8 +13,9 @@ class LoginForm extends React.Component{
         try {
             await firebase
             .auth()
-            .signInWithEmailAndPassword(email.value, password.value)
-            .then(() => this.props.history.push('/dashboard'))
+            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(function() {return firebase.auth().signInWithEmailAndPassword(email.value, password.value)})
+            .then(this.props.history.push('/dashboard'))
         } catch (err) {
             alert (err)
         }
@@ -25,16 +26,15 @@ class LoginForm extends React.Component{
         try {
             await firebase
             .auth()
-            .signInWithPopup(provider)
-            .then(() => this.props.history.push('/dashboard'))
+            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(function() {return firebase.auth().signInWithPopup(provider)})
+            .then(this.props.history.push('/dashboard'))
         } catch (err) {
             alert(err)
         }
     }
 
     render(){
-        if(this.props.userExists)
-            alert('Hey, looks like you\'ve signed up before, Try logging in instead')
         return(
             <div className="container">
                 <form onSubmit={this.logIn} className="form animated fadeIn">

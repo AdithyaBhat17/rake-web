@@ -15,16 +15,16 @@ class Dashboard extends React.Component {
         }
     }
 
-    retrieveUsername = (email) => {
-        const end = email.indexOf('@')
-        return email.substring(0, end)
-    }
+    // retrieveUsername = (email) => {
+    //     const end = email.indexOf('@')
+    //     return email.substring(0, end)
+    // }
 
     render() {
         const { user } = this.props
         return(
             <div>
-                Howdy doody {this.retrieveUsername(user.email)}! <br/>
+                Howdy doody {user.displayName}! <br/>
                 <button onClick={this.logOut}>Logout</button>
             </div>
         )

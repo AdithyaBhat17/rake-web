@@ -12,10 +12,13 @@ class SignupForm extends React.Component{
         try {
             await firebase
             .auth()
-            .createUserWithEmailAndPassword(email.value, password.value)
-            .then(() => this.props.history.push('/dashboard'))
+            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(function() {return firebase.auth().createUserWithEmailAndPassword(email.value, password.value)})
+            .then(this.props.history.push('/dashboard'))
         } catch (err) {
             alert (err)
+            localStorage.removeItem('currentUser')
+            localStorage.removeItem('authenticated')
         }
     }
 
@@ -24,8 +27,9 @@ class SignupForm extends React.Component{
         try {
             await firebase
             .auth()
-            .signInWithPopup(provider)
-            .then(() => this.props.history.push('/dashboard'))
+            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(function() {return firebase.auth().signInWithPopup(provider)})
+            .then(this.props.history.push('/dashboard'))
         } catch (err) {
             alert('Hey, looks like you\'ve signed up before, Try logging in instead')
         }
