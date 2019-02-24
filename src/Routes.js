@@ -4,8 +4,6 @@ import config from './Firebase'
 
 import Home from './components/Home'
 import About from './components/About'
-import Login from './components/Login'
-import Signup from './components/Login/Signup'
 import PrivateRoute from './PrivateRoute';
 import Dashboard from './components/Dashboard';
 
@@ -18,7 +16,7 @@ export default function Routes(props) {
             if(user) {
                 let userDetails = []
                 userDetails.push(user.email, user.uid, user.displayName, user.photoURL)
-                console.log(userDetails)
+                // console.log(userDetails)
                 localStorage.setItem('authenticated', JSON.stringify(true))
                 setAuthenticated(true)
                 localStorage.setItem('currentUser', JSON.stringify(userDetails))
@@ -37,8 +35,8 @@ export default function Routes(props) {
             <React.Fragment>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/about" component={About}/>
-                <Route exact path="/login" component={Login}/>
-                <Route exact path="/join" component={Signup}/>
+                {/* <Route exact path="/login" component={Login}/>
+                <Route exact path="/join" component={Signup}/> */}
                 <PrivateRoute
                  exact 
                  path="/dashboard" 
