@@ -2,6 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 
 import firebase from '../../Firebase'
+import NavbarDash from './NavbarDash'
 
 class Dashboard extends React.Component {
     logOut = () => {
@@ -15,17 +16,23 @@ class Dashboard extends React.Component {
         }
     }
 
-    // retrieveUsername = (email) => {
-    //     const end = email.indexOf('@')
-    //     return email.substring(0, end)
-    // }
-
     render() {
         const { user } = this.props
+        console.log(user.displayName)
         return(
             <div>
-                Howdy doody {user.displayName}! <br/>
-                <button onClick={this.logOut}>Logout</button>
+                <NavbarDash logOut={this.logOut}/>
+                <div className="container-fluid dashboard">
+                     <div className="row">
+                        <div className="col-md-3 col-sm-12">
+                            <div className="thumbnail">
+                                <img src={user.photoURL} alt={user.displayName} className="userPic"/> <br/>
+                                <p style={{textAlign: 'center'}}><strong>{user.displayName}</strong></p>
+                                <p style={{textAlign: 'center'}}><small>{user.email}</small></p>
+                            </div>
+                        </div>
+                     </div>                
+                </div>
             </div>
         )
     }
