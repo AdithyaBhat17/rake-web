@@ -45,11 +45,19 @@ p{
   font-weight: 300;
 }
 
+img {
+  max-width: 100%;
+}
+
 .navbar-default{
   background-color: transparent !important; 
   border: 0 !important;
   border-radius: 0 !important;
   padding:20px 50px;
+}
+
+.dashboard {  
+  padding:0 75px;
 }
 
 .navbar-brand{
@@ -79,6 +87,7 @@ p{
 .navbar-right>li>.lognav{
   color: #2522A6 !important;
 }
+
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
   background-color: transparent;
@@ -142,28 +151,28 @@ img{
 }
 
 /* login form */
-
+/* 
 input{
   color: #2522A6 !important;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
   color: #2522A6 !important;
-  opacity: 0.8; /* Firefox */
+  opacity: 0.8;
   font-weight: bold;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #2522A6 !important;
-  font-weight: bold;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
+:-ms-input-placeholder { 
   color: #2522A6 !important;
   font-weight: bold;
 }
 
-.form{
+::-ms-input-placeholder {
+  color: #2522A6 !important;
+  font-weight: bold;
+} */
+
+/* .form{
   display: block;
   margin:15px auto;
   width: 60%;
@@ -226,6 +235,20 @@ input{
     padding: 10px 25px;
     margin: 5px auto;
     border: none;
+} */
+
+/* Dashboard */
+
+.userPic {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  border: 0.7px solid #eaedf3;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  border-radius: 6px;
+  padding: 0 !important;
 }
 
 @media screen and (max-width: 768px){
