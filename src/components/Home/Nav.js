@@ -13,14 +13,14 @@ export default function Nav({logIn}) {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand animated fadeIn" href="/">
+                <a className="navbar-brand animated fadeIn" title="rake" href="javascript:void(0)">
                     <img className="logo" src={logo} alt="rake"/>
                 </a>
                 </div>
                 <div className="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right animated fadeIn">                        
                         <li><Link to="/about">About Us</Link></li>
-                        <li><a onClick={logIn}>Login</a></li>         
+                        <li><a style={{cursor: 'pointer'}} href="javascript:void(0)" onClick={logIn}>Login</a></li>         
                     </ul>
                 </div>
             </div>
