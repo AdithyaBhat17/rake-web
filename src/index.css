@@ -39,6 +39,7 @@ body{
   font-size: 16px;
   font-family: manrope;
   overflow-x:hidden; 
+  color: #2522A6;
 }
 
 p{
@@ -150,105 +151,40 @@ img{
   margin-top:12px;
 }
 
-/* login form */
-/* 
-input{
-  color: #2522A6 !important;
-}
-
-::placeholder { 
-  color: #2522A6 !important;
-  opacity: 0.8;
-  font-weight: bold;
-}
-
-:-ms-input-placeholder { 
-  color: #2522A6 !important;
-  font-weight: bold;
-}
-
-::-ms-input-placeholder {
-  color: #2522A6 !important;
-  font-weight: bold;
-} */
-
-/* .form{
-  display: block;
-  margin:15px auto;
-  width: 60%;
-  box-shadow: 0 0 25px 1px rgba(46,61,73,.2);
-  padding: 50px 100px;
-  
-}
-
-.tagline-center{
-  text-align: center;
-  color: #2522A6;
-  font-weight: bold;
-  font-family: manrope;
-}
-
-.newhere,.newhere:hover,.newhere:focus,.newhere:active{
-  color: #2522A6;
-  font-size: 12px;
-  display: block;
-  margin: 15px auto;
-  text-align: center;
-  font-weight: lighter;
-  font-family: manrope;
-}
-
-.form-control{
-  border: 0 !important;
-  background-color: transparent !important;
-  border-bottom: 2px solid #2522A6 !important;
-  width: 80%;
-  padding-left: 0; 
-  margin: 30px auto;
-  outline: none !important;
-  border-radius: 0;
-  box-shadow: 0 0 0 !important;
-  color: #2522A6 !important;
-}
-
-.form > p{
-  text-align: center;
-  color: #2522A6;
-} 
-
-.googleicon{
-  width: 15px;
-}
-
-.join{
-  background: none;
-  border: none; 
-}
-
-.submit{
-    text-decoration: none;
-    color: #fff !important;
-    display: inline;
-    background-color: #2522A6;
-    box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
-    border-radius: 30px;
-    padding: 10px 25px;
-    margin: 5px auto;
-    border: none;
-} */
-
 /* Dashboard */
 
 .userPic {
   width: 50%;
+  border-radius: 50%;
   margin-top: 10px;
 }
 
 .thumbnail {
-  border: 0.7px solid #eaedf3;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  border: none;
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
   border-radius: 6px;
-  padding: 0 !important;
+  padding: 10px 0 !important;
+}
+
+.welcome {
+  font-weight: bold;
+  text-align: center
+}
+
+.feature-icon {
+  margin: 10vh auto 0;
+  width: 100%;
+  height: 200px;
+}
+
+.feature-link {
+  text-align: center;
+}
+
+.feature-link > a {
+  color: #2522A6 !important;
+  margin-left: -15px !important;
+  margin-top: -45px !important;
 }
 
 @media screen and (max-width: 768px){

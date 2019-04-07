@@ -4,6 +4,11 @@ import { withRouter } from 'react-router-dom'
 import firebase, { db } from '../../Firebase'
 import NavbarDash from './NavbarDash'
 
+import text from '../../Assets/dashboard/text.svg'
+import barcode from '../../Assets/dashboard/barcode.svg'
+import image from '../../Assets/dashboard/image.svg'
+import arrow_right from '../../Assets/dashboard/arrow-right.svg'
+
 const logOut = (props) => {
     try {
         firebase
@@ -39,15 +44,27 @@ const Dashboard = (props) => {
         <div>
             <NavbarDash logOut={() => logOut(props)}/>
             <div className="container-fluid dashboard">
-                    <div className="row">
-                    <div className="col-md-3 col-sm-12">
-                        <div className="thumbnail">
-                            <img src={user.photoURL} alt={user.displayName} className="userPic"/> <br/>
-                            <p style={{textAlign: 'center'}}><strong>{user.displayName}</strong></p>
-                            <p style={{textAlign: 'center'}}><small>{user.email}</small></p>
+                <h1 className="welcome">Welcome, {user.displayName}!</h1> <br/> <br/>
+                <div className="row">
+                    <div className="col-md-4 col-sm-12">
+                        <img src={text} alt="Recognized Text" className="feature-icon"/> <br/> <br/>
+                        <div className="feature-link">
+                            <a href="#">Recognized Text -></a>
                         </div>
                     </div>
-                    </div>                
+                    <div className="col-md-4 col-sm-12">
+                        <img src={barcode} alt="Scanned Barcodes" className="feature-icon"/> <br/> <br/>
+                        <div className="feature-link">
+                            <a href="#">Scanned Barcodes -></a>
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-sm-12">
+                        <img src={image} alt="Scanned Barcodes" className="feature-icon"/> <br/> <br/>
+                        <div className="feature-link">
+                            <a href="#">Labelled Images -></a>
+                        </div>
+                    </div>
+                </div>                
             </div>
         </div>
     )
