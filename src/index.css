@@ -187,6 +187,25 @@ img{
   margin-top: -45px !important;
 }
 
+.labelled-image {
+  width: 50%;
+  display: block;
+  margin: 25px auto 50px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.1);
+}
+
+.flex-buttons > button {
+  margin-right: 15px;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
+  background-color: #Bb5485;
+  color: #fff;
+}
+
 @media screen and (max-width: 768px){
   .navbar-default{
     padding: 5px !important;
