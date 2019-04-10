@@ -9,7 +9,6 @@ const config = {
     messageSenderId: process.env.REACT_APP_SENDER_ID
 }
 
-console.log(process.env)
 
 firebase.initializeApp(config)
 
