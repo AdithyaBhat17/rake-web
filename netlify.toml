@@ -1,0 +1,4 @@
+[build]
+base = "rake/"
+publish = "rake/build/"
+command = "npm run build"
