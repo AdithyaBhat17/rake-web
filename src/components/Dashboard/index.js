@@ -29,19 +29,19 @@ const Dashboard = (props) => {
             <div className="container-fluid dashboard">
                 <h1 className="welcome">Welcome, {user.displayName}!</h1> <br/> <br/>
                 <div className="row">
-                    <div className="col-md-2 col-sm-12">
+                    <div className="col-md-4 col-sm-12">
                         <img src={text} alt="Recognized Text" className="feature-icon"/> <br/> <br/>
                         <div className="feature-link">
                             <a href="#">Recognized Text -></a>
                         </div>
                     </div>
-                    <div className="col-md-2 col-sm-12">
+                    <div className="col-md-4 col-sm-12">
                         <img src={barcode} alt="Scanned Barcodes" className="feature-icon"/> <br/> <br/>
                         <div className="feature-link">
                             <a href="#">Scanned Barcodes -></a>
                         </div>
                     </div>
-                    <div className="col-md-2 col-sm-12">
+                    <div className="col-md-4 col-sm-12">
                         <img src={image} alt="Scanned Barcodes" className="feature-icon"/> <br/> <br/>
                         <div className="feature-link">
                             <Link to="/dashboard/labelled-images">Labelled Images -></Link>
