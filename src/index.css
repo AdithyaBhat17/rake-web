@@ -188,22 +188,46 @@ img{
 }
 
 .labelled-image {
-  width: 50%;
+  width: 75%;
   display: block;
-  margin: 25px auto 50px;
+  margin: 25px auto 20px;
   border-radius: 8px;
-  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.1);
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.2);
 }
 
-.flex-buttons > button {
-  margin-right: 15px;
-  font-size: 14px;
-  padding: 10px 15px;
+.labels {
+  width: 80%;
+  margin: 0 auto 20px;
+}
+
+.label {
+  background-color: #ececec;
+  padding: 5px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
+  display: inline-flex;
+  color: #2522A6;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 5px; 
+}
+
+.flex-buttons {  
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-buttons > i {
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 18px;
   border-radius: 6px;
   border: none;
   box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
-  background-color: #Bb5485;
-  color: #fff;
+  color: #Bb5485;
 }
 
 @media screen and (max-width: 768px){
