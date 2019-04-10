@@ -4,7 +4,7 @@ import NavbarDash from './NavbarDash';
 import { logOut } from './index';
 
 const LabelledImages = (props) => {
-    let [data, setData] = React.useState([])
+    let [data, setData] = React.useState(null)
     let [loading, setLoading] = React.useState(true)
     React.useEffect(() => {
         const fetchUserData = () => {
@@ -18,7 +18,7 @@ const LabelledImages = (props) => {
         }
 
         fetchUserData()
-        data.length > 0 && setLoading(false)
+        data && setLoading(false)
         console.log(data)
     }, [JSON.stringify(data)])
 
@@ -32,35 +32,28 @@ const LabelledImages = (props) => {
     return (
         <div>
             <NavbarDash logOut={() => logOut(props)} />
-            <div className="container">
+            <div className="container" style={{margin: '-45px auto 0'}}>
+                <div className="row">
+                <h1 className="welcome">Here&#039;s what you&#039;ve labelled so far...</h1> <br/>
                 {data && data.map((img, index) => (
-                    <div key={index} className="row">
-                        <div className="col-md-6 col-sm-12">
+                    <div key={index}>
+                        <div className="col-md-3 col-sm-12">
                             <img src={img.imageFile} className="labelled-image" alt="labelled image"/>
-                        </div>
-                        <div className="col-md-6 col-sm-12">
-                            <div>
-                                <h2 style={{fontWeight: 'bold'}}>Labels Recognized</h2>
-                                {img.labels.map(label => <p key={label}>{label}</p>)}
+                            <div className="labels">
+                                {img.labels.map((label, index) => index < 5 && (
+                                    <div key={index} className="label">{label}</div>
+                                ))}
                             </div>
                             <div className="flex-buttons">
-                                <button>
-                                    <i className="fa fa-search"></i>
-                                </button>
-                                <button>
-                                    <i className="fa fa-share-alt"></i>
-                                </button>
-                                <button>
-                                    <i className="fa fa-download"></i>
-                                </button>
-                                <button>
-                                    <i className="fa fa-trash-alt"></i>
-                                </button>
+                                <i className="fa fa-search"></i>
+                                <i className="fa fa-share-alt"></i>
+                                <i className="fa fa-download"></i>
+                                <i className="fa fa-trash-alt"></i>
                             </div>
                         </div>
                     </div>
                 ))}
-            </div>
+            </div></div>
         </div>
     )
 }
