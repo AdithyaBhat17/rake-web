@@ -230,6 +230,12 @@ img{
   color: #Bb5485;
 }
 
+.empty > img {
+  margin: 25px auto;
+  display: block;
+  width: 70%;
+}
+
 @media screen and (max-width: 768px){
   .navbar-default{
     padding: 5px !important;
@@ -271,6 +277,29 @@ img{
   p{
     width: 100% !important;
     margin-bottom: 25px;
+  }
+  .dashboard {
+    width: 100%;
+    padding: 5px;
+  }
+  .welcome {
+    font-size: 1.5em;
+    padding: 5px;
+    margin-bottom: -25px;
+  }
+  .feature-icon {
+    margin: 25px auto -15px;
+  }
+  .labelled-image {
+    width: 80%;
+  }
+  .empty > img {
+    margin: 5vh auto;
+    width: 90%;
+    height: 300px;
+  }
+  body {
+    padding-bottom: 25px;
   }
 }
 
