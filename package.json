@@ -6,6 +6,7 @@
     "firebase": "^5.8.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-epic-spinners": "^0.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5"
   },
