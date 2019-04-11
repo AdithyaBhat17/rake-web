@@ -30,19 +30,19 @@ const Dashboard = (props) => {
                 <h1 className="welcome">Welcome, {user.displayName}!</h1> <br/> <br/>
                 <div className="row">
                     <div className="col-md-4 col-sm-12">
-                        <img src={text} alt="Recognized Text" className="feature-icon"/> <br/> <br/>
+                        <Link to='/dashboard/recognized-text'><img src={text} alt="Recognized Text" className="feature-icon"/></Link> <br/> <br/>
                         <div className="feature-link">
-                            <a href="#">Recognized Text -></a>
+                            <Link to="/dashboard/recognized-text">Recognized Text -></Link>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-12">
-                        <img src={barcode} alt="Scanned Barcodes" className="feature-icon"/> <br/> <br/>
+                        <Link to='/dashboard/scanned-barcodes'><img src={barcode} alt="Scanned Barcodes" className="feature-icon"/></Link> <br/> <br/>
                         <div className="feature-link">
-                            <a href="#">Scanned Barcodes -></a>
+                            <Link to="/dashboard/scanned-images">Scanned Barcodes -></Link>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-12">
-                        <img src={image} alt="Scanned Barcodes" className="feature-icon"/> <br/> <br/>
+                        <Link to='/dashboard/labelled-images'><img src={image} alt="Scanned Barcodes" className="feature-icon"/></Link> <br/> <br/>
                         <div className="feature-link">
                             <Link to="/dashboard/labelled-images">Labelled Images -></Link>
                         </div>
