@@ -2,6 +2,7 @@
   "name": "rake",
   "version": "0.1.0",
   "private": true,
+  "alias": "rake",
   "dependencies": {
     "firebase": "^5.8.4",
     "react": "^16.8.3",
