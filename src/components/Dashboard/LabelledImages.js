@@ -2,6 +2,8 @@ import React from 'react'
 import { db } from '../../Firebase'
 import NavbarDash from './NavbarDash';
 import { logOut } from './index';
+import { SemipolarSpinner } from 'react-epic-spinners'
+import { Link } from 'react-router-dom'
 
 const LabelledImages = (props) => {
     let [data, setData] = React.useState(null)
@@ -10,32 +12,27 @@ const LabelledImages = (props) => {
         const fetchUserData = () => {
             db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').get()
             .then(async collection => {
-                console.log(collection)
                 let i = collection.docs.map(doc => doc.data()) 
                 await setData(i)
-                console.log(data)
             })
         }
 
         fetchUserData()
         data && setLoading(false)
-        console.log(data)
     }, [JSON.stringify(data)])
 
     if(loading)
         return (
-            <div>
-                loading...
-            </div>
+            <SemipolarSpinner color='#2522a6' style={{display: 'block', margin: '45vh auto'}} />
         )
 
     return (
         <div>
-            <NavbarDash logOut={() => logOut(props)} />
+            <NavbarDash logOut={() => logOut(props)} /> <br/>
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
                 <h1 className="welcome">Here&#039;s what you&#039;ve labelled so far...</h1> <br/>
-                {data && data.map((img, index) => (
+                {data.length > 0 ? data.map((img, index) => (
                     <div key={index}>
                         <div className="col-md-3 col-sm-12">
                             <img src={img.imageFile} className="labelled-image" alt="labelled image"/>
@@ -52,7 +49,16 @@ const LabelledImages = (props) => {
                             </div>
                         </div>
                     </div>
-                ))}
+                )) : (
+                    <div className="empty">
+                        <img src="https://gph.to/2D6Yuqg" alt="Nothing to see here"/> <br/>
+                        {window.screen.width < 768 && (
+                            <p style={{textAlign: 'center'}} className="about-site">
+                                <Link to="/dashboard" style={{color: '#2522a6'}}>&lt;- Back To Dashboard</Link>
+                            </p>
+                        )}
+                    </div>
+                )}
             </div></div>
         </div>
     )
