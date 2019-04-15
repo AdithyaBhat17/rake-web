@@ -1,10 +1,11 @@
 import React from 'react'
 import logo from '../../Assets/rakelogowhite.png'
+import { Link } from 'react-router-dom'
 
 export default function NavbarDash({logOut}) {
     return (
         <nav className="navbar navbar-default navbar-dashboard">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="navbar-header">
                     <button type="button" className="navbar-toggle collapsed animated fadeIn" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span className="sr-only">Toggle navigation</span>
@@ -19,6 +20,9 @@ export default function NavbarDash({logOut}) {
                 <div className="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right animated fadeIn">                        
                         <li><a style={{cursor: 'pointer'}} href="javascript:void(0)" className="lognav" onClick={logOut}>Logout</a></li>
+                    </ul>
+                    <ul className="nav navbar-nav navbar-right animated fadeIn">                        
+                        <li><Link style={{cursor: 'pointer'}} to='/dashboard' className="lognav">Dashboard</Link></li>
                     </ul>
                 </div>
             </div>

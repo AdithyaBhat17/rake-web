@@ -4,9 +4,10 @@ import config from './Firebase'
 
 import Home from './components/Home'
 import About from './components/About'
-import PrivateRoute from './PrivateRoute';
-import Dashboard from './components/Dashboard';
+import PrivateRoute from './PrivateRoute'
+import Dashboard from './components/Dashboard'
 import LabelledImages from './components/Dashboard/LabelledImages'
+import Barcode from './components/Dashboard/Barcode'
 
 export default function Routes(props) {
     const [authenticated, setAuthenticated] = useState(JSON.parse(localStorage.getItem('authenticated')))
@@ -42,6 +43,13 @@ export default function Routes(props) {
                  component={Dashboard} 
                  authenticated={authenticated}
                  user={user}
+                />
+                <PrivateRoute
+                 exact
+                 path="/dashboard/scanned-barcodes"
+                 authenticated={authenticated}
+                 user={user}
+                 component={Barcode}
                 />
                 <PrivateRoute
                  exact
