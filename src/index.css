@@ -220,7 +220,7 @@ img{
   justify-content: space-around;
 }
 
-.flex-buttons > i {
+.flex-buttons > i, .flex-buttons > button {
   cursor: pointer;
   margin-right: 5px;
   font-size: 18px;
@@ -228,6 +228,8 @@ img{
   border: none;
   box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
   color: #Bb5485;
+  background-color: transparent;
+  outline: none;
 }
 
 .empty > img {

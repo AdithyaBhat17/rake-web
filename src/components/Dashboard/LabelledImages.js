@@ -4,10 +4,13 @@ import NavbarDash from './NavbarDash';
 import { logOut } from './index';
 import { SemipolarSpinner } from 'react-epic-spinners'
 import { Link } from 'react-router-dom'
+import Clipboard from 'react-clipboard.js'
+
 
 const LabelledImages = (props) => {
     let [data, setData] = React.useState(null)
     let [loading, setLoading] = React.useState(true)
+
     React.useEffect(() => {
         const fetchUserData = () => {
             db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').get()
@@ -36,6 +39,7 @@ const LabelledImages = (props) => {
                     <div key={index}>
                         <div className="col-md-3 col-sm-12">
                             <img src={img.imageFile} className="labelled-image" alt="labelled image"/>
+                            <textarea style={{display: 'none'}} id="text" value={img.imageFile}></textarea>
                             <div className="labels">
                                 {img.labels.map((label, index) => index < 5 && (
                                     <div key={index} className="label">{label}</div>
@@ -43,7 +47,9 @@ const LabelledImages = (props) => {
                             </div>
                             <div className="flex-buttons">
                                 <i className="fa fa-search"></i>
-                                <i className="fa fa-share-alt"></i>
+                                <Clipboard data-clipboard-text={img.imageFile}>
+                                    <i className="fa fa-share-alt text"></i>
+                                </Clipboard>
                                 <i className="fa fa-download"></i>
                                 <i className="fa fa-trash-alt"></i>
                             </div>
