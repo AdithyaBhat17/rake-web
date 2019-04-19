@@ -5,6 +5,7 @@ import { logOut } from './index';
 import { SemipolarSpinner } from 'react-epic-spinners'
 import { Link } from 'react-router-dom'
 import Clipboard from 'react-clipboard.js'
+import { toast, ToastContainer } from 'react-toastify'
 
 
 const LabelledImages = (props) => {
@@ -24,6 +25,17 @@ const LabelledImages = (props) => {
         data && setLoading(false)
     }, [JSON.stringify(data)])
 
+    const success = () => {
+        toast.success('🎉 Copied to clipboard', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+        })
+    }
+
     if(loading)
         return (
             <SemipolarSpinner color='#2522a6' style={{display: 'block', margin: '45vh auto'}} />
@@ -32,6 +44,7 @@ const LabelledImages = (props) => {
     return (
         <div>
             <NavbarDash logOut={() => logOut(props)} /> <br/>
+            <ToastContainer />
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
                 <h1 className="welcome">Here&#039;s what you&#039;ve labelled so far...</h1> <br/>
@@ -47,7 +60,7 @@ const LabelledImages = (props) => {
                             </div>
                             <div className="flex-buttons">
                                 <i className="fa fa-search"></i>
-                                <Clipboard data-clipboard-text={img.imageFile}>
+                                <Clipboard onSuccess={success} data-clipboard-text={img.imageFile}>
                                     <i className="fa fa-share-alt text"></i>
                                 </Clipboard>
                                 <i className="fa fa-download"></i>
