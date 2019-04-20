@@ -35,7 +35,7 @@ export default function Barcode (props) {
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
-            })
+        })
         document.getElementById(id).style.display = 'none'
         // await db.collection('users').doc(props.user[1] || props.user.uid).collection('scannedBarcodes').doc(id).delete()
 
@@ -53,7 +53,7 @@ export default function Barcode (props) {
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
                 <h1 className="welcome">Here&#039;s what you&#039;ve scanned so far...</h1> <br/>
-                {data.length > 0 ? data.map((img) => (
+                {data.length > 0 ? data.map(img => (
                     <div id={img.id} key={img.id}>
                         <div className="col-md-3 col-sm-12">
                             <img src={img.imageFile} className="labelled-image" alt="scanned barcodes"/>
