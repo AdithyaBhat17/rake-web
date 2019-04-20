@@ -202,7 +202,7 @@ img{
 
 .label {
   background-color: #ececec;
-  padding: 5px;
+  padding: 8px 5px;
   border-radius: 6px;
   box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
   display: inline-flex;
@@ -210,6 +210,7 @@ img{
   text-align: center;
   font-size: 12px;
   margin-right: 5px; 
+  margin-bottom: 5px;
 }
 
 .flex-buttons {  
@@ -230,6 +231,21 @@ img{
   color: #Bb5485;
   background-color: transparent;
   outline: none;
+}
+
+#dialog-title {
+  color: #2522A6;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.similar {
+  color: #fff;
+  background-color: #2522A6;
+  padding: 8px;
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .empty > img {
