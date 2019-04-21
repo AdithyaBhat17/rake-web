@@ -52,12 +52,12 @@ export default function Barcode (props) {
             <ToastContainer />
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
-                <h1 className="welcome">Here&#039;s what you&#039;ve scanned so far...</h1> <br/>
+                <h1 className="welcome animated fadeIn">Here&#039;s what you&#039;ve scanned so far...</h1> <br/>
                 {data.length > 0 ? data.map(img => (
                     <div id={img.id} key={img.id}>
                         <div className="col-md-3 col-sm-12">
                             <img src={img.imageFile} className="labelled-image" alt="scanned barcodes"/>
-                            <div className="labels" style={{textAlign: 'center'}}>
+                            <div className="labels animated fadeIn" style={{textAlign: 'center'}}>
                                 {img.info.includes('@') ? 
                                 <a
                                  href={`mailto:${img.info}`} 
@@ -71,7 +71,7 @@ export default function Barcode (props) {
                                  target="_blank"
                                  rel="noopener noreferrer">{img.info}</a> :
                                 img.info} <br/>
-                                <p style={{
+                                <p className="animated fadeIn" style={{
                                     textAlign: 'center', 
                                     color: '#Bb5485',
                                     fontSize: 14,
@@ -83,7 +83,7 @@ export default function Barcode (props) {
                         </div>
                     </div>
                 )) : (
-                    <div className="empty">
+                    <div className="empty animated fadeIn">
                         <img src="https://gph.to/2D6Yuqg" alt="Nothing to see here"/> <br/>
                         {window.screen.width < 768 && (
                             <p style={{textAlign: 'center'}} className="about-site">

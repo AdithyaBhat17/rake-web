@@ -82,17 +82,17 @@ const LabelledImages = (props) => {
             <ToastContainer />
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
-                    <h1 className="welcome">Here&#039;s what you&#039;ve labelled so far...</h1> <br/>
+                    <h1 className="welcome animated fadeIn">Here&#039;s what you&#039;ve labelled so far...</h1> <br/>
                     {data.length > 0 ? data.map(img => (
                         <div id={img.id} key={img.id}>
                             <div className="col-md-3 col-sm-12">
                                 <img src={img.imageFile} className="labelled-image" alt="labelled image"/>
-                                <div className="labels">
+                                <div className="labels animated fadeIn">
                                     {img.labels.map((label, index) => index < 5 && (
                                         <div key={index} className="label">{label}</div>
                                     ))}
                                 </div>
-                                <div className="flex-buttons">
+                                <div className="flex-buttons animated fadeIn">
                                     <i className="fa fa-search" onClick={() => searchImage(img.imageFile)}></i>
                                     <Clipboard onSuccess={success} data-clipboard-text={img.imageFile}>
                                         <i className="fa fa-share-alt text"></i>
