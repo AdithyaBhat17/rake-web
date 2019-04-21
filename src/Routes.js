@@ -8,6 +8,8 @@ import PrivateRoute from './PrivateRoute'
 import Dashboard from './components/Dashboard'
 import LabelledImages from './components/Dashboard/LabelledImages'
 import Barcode from './components/Dashboard/Barcode'
+import RecognizedText from './components/Dashboard/RecognizedText'
+import Login from './components/Home/Login';
 
 export default function Routes(props) {
     const [authenticated, setAuthenticated] = useState(JSON.parse(localStorage.getItem('authenticated')))
@@ -37,12 +39,20 @@ export default function Routes(props) {
             <React.Fragment>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/about" component={About}/>
+                <Route exact path="/login" component={Login} />
                 <PrivateRoute
                  exact 
                  path="/dashboard" 
                  component={Dashboard} 
                  authenticated={authenticated}
                  user={user}
+                />
+                <PrivateRoute
+                 exact
+                 path="/dashboard/recognized-text"
+                 authenticated={authenticated}
+                 user={user}
+                 component={RecognizedText}
                 />
                 <PrivateRoute
                  exact
