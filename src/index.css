@@ -166,6 +166,16 @@ img{
   padding: 10px 0 !important;
 }
 
+.timestamp {
+  padding: 10px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timestamp > a:nth-child(2) {
+  white-space: nowrap;
+}
+
 .welcome {
   font-weight: bold;
   text-align: center
