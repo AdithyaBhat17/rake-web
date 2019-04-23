@@ -26,7 +26,6 @@ const RecognizedText = (props) => {
                     return {id: doc.id, ...doc.data()}
                 }) 
                 await setData(i)
-                console.log(data)
             })
         }
 
@@ -48,12 +47,12 @@ const RecognizedText = (props) => {
                             <div className="thumbnail timestamp">
                                 <Link
                                  style={{color: '#2522a6'}} 
-                                 to={`/dashboard/recognize-text/${text.id}`}>
+                                 to={`/dashboard/recognized-text/${text.id}`}>
                                  <small>{formatTimestamp(text.timestamp)}</small>
                                 </Link>
                                 <Link
                                  style={{color: '#2522a6'}} 
-                                 to={`/dashboard/recognize-text/${text.id}`}>
+                                 to={`/dashboard/recognized-text/${text.id}`}>
                                  ->
                                 </Link>
                             </div>
