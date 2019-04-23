@@ -9,9 +9,10 @@ import Dashboard from './components/Dashboard'
 import LabelledImages from './components/Dashboard/LabelledImages'
 import Barcode from './components/Dashboard/Barcode'
 import RecognizedText from './components/Dashboard/RecognizedText'
-import Login from './components/Home/Login';
+import Login from './components/Home/Login'
+import Text from './components/Dashboard/Text'
 
-export default function Routes(props) {
+export default function Routes() {
     const [authenticated, setAuthenticated] = useState(JSON.parse(localStorage.getItem('authenticated')))
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('currentUser')))
 
@@ -53,6 +54,13 @@ export default function Routes(props) {
                  authenticated={authenticated}
                  user={user}
                  component={RecognizedText}
+                />
+                <PrivateRoute
+                 exact
+                 path="/dashboard/recognized-text/:id"
+                 authenticated={authenticated}
+                 user={user}
+                 component={Text}
                 />
                 <PrivateRoute
                  exact
