@@ -12,9 +12,9 @@ const Nav = () => (
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand animated fadeIn" title="rake" href="javascript:void(0)">
+            <Link className="navbar-brand animated fadeIn" title="rake" to="/">
                 <img className="logo" src={logo} alt="rake"/>
-            </a>
+            </Link>
             </div>
             <div className="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav navbar-right animated fadeIn">                        
