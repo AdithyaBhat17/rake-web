@@ -264,6 +264,13 @@ img{
   width: 70%;
 }
 
+.text {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
+}
+
 @media screen and (max-width: 768px){
   .navbar-default{
     padding: 5px !important;
