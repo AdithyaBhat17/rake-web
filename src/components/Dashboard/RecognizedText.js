@@ -48,12 +48,12 @@ const RecognizedText = (props) => {
                             <div className="thumbnail timestamp">
                                 <Link
                                  style={{color: '#2522a6'}} 
-                                 to={`/dashboard/recognize-text/${text.timestamp}`}>
+                                 to={`/dashboard/recognize-text/${text.id}`}>
                                  <small>{formatTimestamp(text.timestamp)}</small>
                                 </Link>
                                 <Link
                                  style={{color: '#2522a6'}} 
-                                 to={`/dashboard/recognize-text/${text.timestamp}`}>
+                                 to={`/dashboard/recognize-text/${text.id}`}>
                                  ->
                                 </Link>
                             </div>
