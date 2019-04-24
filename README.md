@@ -6,7 +6,7 @@ https://rake.now.sh (mobile app still in progress)
 
 ## Contributors
 
-[Adithya NR](https://adithyabhat.com)  -  Front-End Engineer, IDF certified UX Designer 
+[Adithya NR](https://adithyabhat.com)  -  Front-End Engineer, IDF certified UX Designer  
 [Apeksha Joshi](https://github.com/apeksha-joshi) 
 
 ## License
