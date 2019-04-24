@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 
 import { SemipolarSpinner } from 'react-epic-spinners'
+import { toast, ToastContainer } from 'react-toastify'
 
 const formatTimestamp = (timestamp) => {
     const date = moment(timestamp).format("dddd, MMMM Do YYYY, h:mm a")
@@ -32,6 +33,15 @@ const RecognizedText = (props) => {
         fetchUserData()
         data && setLoading(false)
     }, [JSON.stringify(data)])
+
+    const delete_text = async id => {
+        // await db.collection('users').doc(props.user[1] || props.user.uid).collection('recognizedText').doc(id).delete()
+        await toast.success('👍 Deleted successfully!', {
+            position: "top-center",
+            autoClose: 2000
+        })
+        document.getElementById(id).style.display = 'none'
+    }
     
     if(loading)
         return (
@@ -40,26 +50,34 @@ const RecognizedText = (props) => {
     return (
         <div>
             <NavbarDash logOut={() => logOut(props)} />
+            <ToastContainer />
             <div className="container">
                 <div className="row">
-                    {data && data.map(text => (
-                        <div key={text.id} className="col-md-4 col-sm-12">
+                    {data && data.sort((a,b) => b.timestamp.localeCompare(a.timestamp)).map(text => (
+                        <div id={text.id} key={text.id} className="col-md-4 col-sm-12">
                             <div className="thumbnail timestamp">
                                 <Link
                                  style={{color: '#2522a6'}} 
                                  to={`/dashboard/recognized-text/${text.id}`}>
-                                 <small>{formatTimestamp(text.timestamp)}</small>
+                                 <small>{formatTimestamp(text.timestamp)} -></small>
                                 </Link>
-                                <Link
-                                 style={{color: '#2522a6'}} 
-                                 to={`/dashboard/recognized-text/${text.id}`}>
-                                 ->
-                                </Link>
+                                <span>
+                                    <i
+                                     style={{opacity: 0.8, color: '#Bb5485', verticalAlign: 'middle', cursor: 'pointer'}} 
+                                     className="fas fa-trash-alt"
+                                     onClick={() => delete_text(text.id)}>
+                                    </i>
+                                </span>
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> <br/>
+            {window.screen.width < 768 && (
+                <p style={{textAlign: 'center'}} className="about-site">
+                    <Link to="/dashboard" style={{color: '#bb5485'}}>&lt;- Back To Dashboard</Link>
+                </p>
+            )} <br/>
         </div>
     )
 }
