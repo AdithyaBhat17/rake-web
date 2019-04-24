@@ -37,13 +37,6 @@ const LabelledImages = (props) => {
         setSearchResults(search_results)
     }
 
-    const success = () => {
-        toast.success('🎉 Copied to clipboard', {
-            position: "top-center",
-            autoClose: 2000
-        })
-    }
-
     const download = (image) => {
         let link = document.createElement('a')
         link.href = image
