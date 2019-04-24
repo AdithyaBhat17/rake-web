@@ -27,7 +27,8 @@ export default function Barcode (props) {
         data && setLoading(false)
     }, [JSON.stringify(data)])
 
-    const deleteBarcode = id => {
+    const deleteBarcode = async id => {
+        await db.collection('users').doc(props.user[1] || props.user.uid).collection('scannedBarcodes').doc(id).delete()
         toast.success('👍 Deleted successfully!', {
             position: "top-center",
             autoClose: 2000,
@@ -37,7 +38,6 @@ export default function Barcode (props) {
             draggable: true,
         })
         document.getElementById(id).style.display = 'none'
-        // await db.collection('users').doc(props.user[1] || props.user.uid).collection('scannedBarcodes').doc(id).delete()
 
     }
 

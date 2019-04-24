@@ -35,7 +35,7 @@ const RecognizedText = (props) => {
     }, [JSON.stringify(data)])
 
     const delete_text = async id => {
-        // await db.collection('users').doc(props.user[1] || props.user.uid).collection('recognizedText').doc(id).delete()
+        await db.collection('users').doc(props.user[1] || props.user.uid).collection('recognizedText').doc(id).delete()
         await toast.success('👍 Deleted successfully!', {
             position: "top-center",
             autoClose: 2000

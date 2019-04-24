@@ -48,7 +48,7 @@ const LabelledImages = (props) => {
     }
 
     const delete_img = async id => {
-        // await db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').doc(id).delete()
+        await db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').doc(id).delete()
         toast.success('👍 Deleted successfully!', {
             position: "top-center",
             autoClose: 2000
