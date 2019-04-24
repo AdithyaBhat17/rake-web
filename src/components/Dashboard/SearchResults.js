@@ -16,7 +16,10 @@ const SearchResults = ({data}) => {
                     </span>
                 ))}
             </p>
-            <p><a href={data.similar_images[0]} target="_blank" rel="noopener noreferrer" className="similar">Similar Images</a></p>
+            <p>
+                <a href={data.similar_images[0]} target="_blank" rel="noopener noreferrer" className="similar">Similar Images</a>
+                <a href={data.shop[0]} target="_blank" rel="noopener noreferrer" className="similar">Shop for {data.best_guess}</a>
+            </p>
         </div>
     )
 }
