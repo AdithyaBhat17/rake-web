@@ -3,6 +3,27 @@ import NavbarDash from './NavbarDash'
 import { logOut } from '.' // test this later
 import { db } from '../../Firebase'
 import { Link } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+
+export const copyToClipboard = (text) => {
+    let textArea = document.createElement('textarea')
+    textArea.value = text
+    textArea.style.position = 'fixed'
+    document.body.appendChild(textArea)
+    textArea.focus()
+    textArea.select()
+    document.execCommand('copy') ? 
+    toast.success('🎉 Copied to Clipboard', {
+        autoClose: 2000,
+        position: "top-center"
+    }) : 
+    toast.error('😢 Copying to Clipboard failed, Try again', {
+        autoClose: 2000,
+        position: "top-center"
+    })
+
+    document.body.removeChild(textArea)
+}
 
 const Text = (props) => {
     const [data, setData] = React.useState(null)
@@ -15,11 +36,12 @@ const Text = (props) => {
     return (
         <div>
             <NavbarDash logOut={() => logOut(props)} />
+            <ToastContainer />
             <div className="container">
                 {data && data.blocks.map((block, index) => (
                     <p key={index} className="text">
                         <span style={{maxWidth: '90%'}}>{block}</span>
-                        <span style={{opacity: 0.9, cursor: 'pointer'}}>
+                        <span onClick={() => copyToClipboard(block)} style={{opacity: 0.9, cursor: 'pointer'}}>
                             <i className="fa fa-copy"></i>
                         </span>
                     </p>

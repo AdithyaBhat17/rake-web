@@ -8,7 +8,8 @@ import Clipboard from 'react-clipboard.js'
 import { toast, ToastContainer } from 'react-toastify'
 import searchAPI from '../../utils'
 import { Dialog } from '@auth0/cosmos'
-import SearchResults from './SearchResults';
+import SearchResults from './SearchResults'
+import { copyToClipboard } from './Text'
 
 const LabelledImages = (props) => {
     let [data, setData] = React.useState(null)
@@ -40,11 +41,7 @@ const LabelledImages = (props) => {
     const success = () => {
         toast.success('🎉 Copied to clipboard', {
             position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
+            autoClose: 2000
         })
     }
 
@@ -58,18 +55,13 @@ const LabelledImages = (props) => {
         // document.
     }
 
-    const delete_img = (id) => {
+    const delete_img = async id => {
+        // await db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').doc(id).delete()
         toast.success('👍 Deleted successfully!', {
             position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
+            autoClose: 2000
         })
-        document.getElementById(id).style.display = 'none'
-        // db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').doc(id).delete()
-    }
+        document.getElementById(id).style.display = 'none'    }
 
     if(loading)
         return (
@@ -94,9 +86,7 @@ const LabelledImages = (props) => {
                                 </div>
                                 <div className="flex-buttons animated fadeIn">
                                     <i className="fa fa-search" onClick={() => searchImage(img.imageFile)}></i>
-                                    <Clipboard onSuccess={success} data-clipboard-text={img.imageFile}>
-                                        <i className="fa fa-share-alt text"></i>
-                                    </Clipboard>
+                                    <i onClick={() => copyToClipboard(img.imageFile)} className="fa fa-share-alt"></i>
                                     <i className="fa fa-download" onClick={() => download(img.imageFile)}></i>
                                     <i className="fa fa-trash-alt" onClick={() => delete_img(img.id)}></i>
                                 </div>
@@ -105,11 +95,6 @@ const LabelledImages = (props) => {
                     )) : (
                         <div className="empty">
                             <img src="https://gph.to/2D6Yuqg" alt="Nothing to see here"/> <br/>
-                            {window.screen.width < 768 && (
-                                <p style={{textAlign: 'center'}} className="about-site">
-                                    <Link to="/dashboard" style={{color: '#2522a6'}}>&lt;- Back To Dashboard</Link>
-                                </p>
-                            )}
                         </div>
                     )}
                 </div>
@@ -126,7 +111,12 @@ const LabelledImages = (props) => {
                         <SearchResults data={searchResults} />
                     }
                 </Dialog>
-            </div>
+            </div> <br/> <br/>
+            {window.screen.width < 768 && (
+                <p style={{textAlign: 'center'}} className="about-site">
+                    <Link to="/dashboard" style={{color: '#bb5485'}}>&lt;- Back To Dashboard</Link>
+                </p>
+            )} <br/>
         </div>
     )
 }
