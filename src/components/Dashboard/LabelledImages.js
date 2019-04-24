@@ -4,7 +4,6 @@ import NavbarDash from './NavbarDash';
 import { logOut } from './index';
 import { SemipolarSpinner } from 'react-epic-spinners'
 import { Link } from 'react-router-dom'
-import Clipboard from 'react-clipboard.js'
 import { toast, ToastContainer } from 'react-toastify'
 import searchAPI from '../../utils'
 import { Dialog } from '@auth0/cosmos'
