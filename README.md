@@ -6,8 +6,8 @@ https://rake.now.sh (mobile app still in progress)
 
 ## Contributors
 
-[Adithya NR](https://adithyabhat.com)  -  UI/UX Designer, Front-End Developer  
-[Apeksha Joshi](https://github.com/apeksha-joshi)  -  Full Stack Developer 
+[Adithya NR](https://adithyabhat.com)  -  Front-End Engineer, IDF certified UX Designer 
+[Apeksha Joshi](https://github.com/apeksha-joshi) 
 
 ## License
 
