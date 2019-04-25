@@ -37,14 +37,21 @@ const LabelledImages = (props) => {
         setSearchResults(search_results)
     }
 
-    const download = (image) => {
-        let link = document.createElement('a')
-        link.href = image
-        link.download = 'image.png'
-        link.rel = 'noopener noreferrer'
-        link.target = '_blank'
-        link.click()
-        // document.
+    const download = (image, timestamp) => {
+        fetch('https://cors-anywhere.herokuapp.com/' + image)
+        .then(response => response.blob())
+        .then(blob => {
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) // for IE
+                window.navigator.msSaveOrOpenBlob(blob, timestamp)
+            else {
+                let a = document.createElement('a')
+                a.href = URL.createObjectURL(blob)
+                document.body.appendChild(a)
+                a.download = timestamp
+                a.click()
+                document.body.removeChild(a)
+            }
+        })
     }
 
     const delete_img = async id => {
@@ -79,7 +86,7 @@ const LabelledImages = (props) => {
                                 <div className="flex-buttons animated fadeIn">
                                     <i className="fa fa-search" onClick={() => searchImage(img.imageFile)}></i>
                                     <i onClick={() => copyToClipboard(img.imageFile)} className="fa fa-share-alt"></i>
-                                    <i className="fa fa-download" onClick={() => download(img.imageFile)}></i>
+                                    <i className="fa fa-download" onClick={() => download(img.imageFile, img.timestamp)}></i>
                                     <i className="fa fa-trash-alt" onClick={() => delete_img(img.id)}></i>
                                 </div>
                             </div>
