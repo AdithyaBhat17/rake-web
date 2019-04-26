@@ -7,4 +7,5 @@ export default function searchAPI(body) {
         body: JSON.stringify(body),
     })
     .then(response => response.json())
+    .catch(err => alert(err))
 }
