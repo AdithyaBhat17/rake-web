@@ -53,7 +53,8 @@ const RecognizedText = (props) => {
             <ToastContainer />
             <div className="container">
                 <div className="row">
-                    {data && data.sort((a,b) => b.timestamp.localeCompare(a.timestamp)).map(text => (
+                    <h1 className="welcome animated fadeIn">Here&#039;s what you&#039;ve recognized so far...</h1> <br/>
+                    {data.length > 0 ? data.sort((a,b) => b.timestamp.localeCompare(a.timestamp)).map(text => (
                         <div id={text.id} key={text.id} className="col-md-4 col-sm-12">
                             <div className="thumbnail timestamp">
                                 <Link
@@ -70,7 +71,11 @@ const RecognizedText = (props) => {
                                 </span>
                             </div>
                         </div>
-                    ))}
+                    )) : (
+                        <div className="empty">
+                            <img src="https://gph.to/2D6Yuqg" alt="Nothing to see here"/> <br/>
+                        </div>
+                    )}
                 </div>
             </div> <br/>
             {window.screen.width < 768 && (
