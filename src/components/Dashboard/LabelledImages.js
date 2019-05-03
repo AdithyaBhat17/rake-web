@@ -74,10 +74,10 @@ const LabelledImages = (props) => {
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
                     <h1 className="welcome animated fadeIn">Here&#039;s what you&#039;ve labelled so far...</h1> <br/>
-                    {data.length > 0 ? data.sort((a, b) => a.timestamp.localeCompare(b.timestamp)).map(img => (
-                        <div id={img.id} key={img.id}>
+                    {data.length > 0 ? data.sort((a, b) => b.timestamp.substring(4).localeCompare(a.timestamp.substring(4))).map(img => (
+                        <div id={img.id} className="image-div" key={img.id}>
                             <div className="col-md-3 col-sm-12">
-                                <img src={img.imageFile} className="labelled-image" alt="labelled image"/>
+                                <img src={img.imageFile} className="labelled-image" alt="labelled images"/>
                                 <div className="labels animated fadeIn">
                                     {img.labels.map((label, index) => index < 5 && (
                                         <div key={index} className="label">{label}</div>
