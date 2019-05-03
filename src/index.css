@@ -159,6 +159,11 @@ img{
   margin-top: 10px;
 }
 
+.image-div > div {
+  margin-bottom: 55px;
+  height: 500px;
+}
+
 .thumbnail {
   border: none;
   box-shadow: 5px 5px 25px 0 rgba(0,0,0,0.07);
@@ -340,6 +345,9 @@ img{
   }
   body {
     padding-bottom: 25px;
+  }
+  .image-div > div {
+    height: auto;
   }
 }
 
