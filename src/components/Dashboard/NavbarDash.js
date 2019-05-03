@@ -19,7 +19,16 @@ export default function NavbarDash({logOut}) {
                 </div>
                 <div className="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right animated fadeIn">                        
-                        <li><a style={{cursor: 'pointer'}} href="javascript:void(0)" className="lognav" onClick={logOut}>Logout</a></li>
+                        <li>
+                            <a
+                             style={{cursor: 'pointer'}} 
+                             href="javascript:void(0)" 
+                             alt="logout" 
+                             title="Logout" 
+                             className="lognav" 
+                             onClick={logOut}>Logout
+                            </a>
+                        </li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right animated fadeIn">                        
                         <li><Link style={{cursor: 'pointer'}} to='/dashboard' className="lognav">Dashboard</Link></li>
