@@ -53,24 +53,32 @@ export default function Barcode (props) {
             <div className="container" style={{margin: '-45px auto 0'}}>
                 <div className="row">
                 <h1 className="welcome animated fadeIn">Here&#039;s what you&#039;ve scanned so far...</h1> <br/>
-                {data.length > 0 ? data.map(img => (
+                {data.length > 0 ? data.sort((a, b) => b.timestamp.substring(4).localeCompare(a.timestamp.substring(4))).map(img => (
                     <div id={img.id} key={img.id}>
                         <div className="col-md-3 col-sm-12">
                             <img src={img.imageFile} className="labelled-image" alt="scanned barcodes"/>
                             <div className="labels animated fadeIn" style={{textAlign: 'center'}}>
                                 {img.info.includes('@') ? 
-                                <a
-                                 href={`mailto:${img.info}`} 
-                                 style={{color: '#2522a6'}} 
-                                 alt={img.info}>{img.info}</a> : 
-                                img.info.includes('.') ? 
-                                <a
-                                 href={`mailto:${img.info}`} 
-                                 style={{color: '#2522a6'}} 
-                                 alt={img.info}
-                                 target="_blank"
-                                 rel="noopener noreferrer">{img.info}</a> :
-                                img.info} <br/>
+                                    <a
+                                     href={`mailto:${img.info}`} 
+                                     style={{color: '#2522a6', fontSize: 14}} 
+                                     alt={img.info}>{img.info}</a> : 
+                                    (img.info.includes('.') || img.info.includes('https://') || img.info.includes('www.')) ? 
+                                    <a
+                                     href={img.info.includes('www.') ? `https://${img.info}` : img.info} 
+                                     style={{color: '#2522a6', fontSize: 14}} 
+                                     alt={img.info}
+                                     target="_blank"
+                                     rel="noopener noreferrer">{img.info}</a> : 
+                                    !isNaN(img.info) ? 
+                                    <a
+                                     href={`tel:${img.info}`} 
+                                     style={{color: '#2522a6', fontSize: 14}} 
+                                     alt={img.info}>
+                                    {img.info}
+                                    </a> : 
+                                    img.info
+                                } <br/>
                                 <p className="animated fadeIn" style={{
                                     textAlign: 'center', 
                                     color: '#Bb5485',
