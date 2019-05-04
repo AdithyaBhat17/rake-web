@@ -13,11 +13,10 @@ const Home = () => (
           </div>
           <div className="col-lg-6 col-lg-pull-6">
             <h1 className="tagline">Make your images smart</h1>
-            <p className="about-site">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-              Totam commodi ut quisquam nobis aliquam minima deserunt provident atque illum quam nisi eius 
-              voluptate reiciendis aspernatur ducimus quae dicta labore ipsam, nemo nihil dignissimos harum 
-              dolores amet. Numquam odit optio delectus laboriosam quo. Assumenda nam aperiam provident quas 
-              architecto, voluptatibus expedita.
+            <p className="about-site">Ever looked at a handbag that someone had on at the airport and wondered where you could buy 
+            it without asking her? Ever went out for a run and saw a food discount QR code that you wanted to save for later use? 
+            What about that time when someone handed you a visiting card and you wanted the details saved on your phone? Rake is 
+            here to help with all of that with its unique set of features like text recognition, barcode scanning & image labelling.
               <br/> <br/>
               <a href="/" className="download-app"><i className="fab fa-google-play"></i>&nbsp; GET APP</a>
             </p>

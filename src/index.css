@@ -121,7 +121,7 @@ img{
 }
 
 .about-site{
-  width: 80%;
+  width: 100%;
 }
 
 .navbar-right>li>a{
@@ -375,7 +375,37 @@ img{
     font-size: 18px;
   }
   .tagline{
-    margin-top: 23vh;
+    margin-top: 21vh;
+  }
+  img{
+    max-width: 110%;
+  }
+  .form{
+    margin-top: 10vh;
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .navbar-default{
+    padding: 30px 60px !important;
+  }
+  .container {
+    width: 80%;
+  }
+  .App{
+    background-position: -80% 100%;
+  }
+  .hero{
+    margin-top: 18vh;
+  }
+  body{
+    font-size: 18px;
+  }
+  .navbar-default{
+    padding: 30px 0 !important;
+  }
+  .tagline{
+    margin-top: 25vh;
   }
   img{
     max-width: 110%;

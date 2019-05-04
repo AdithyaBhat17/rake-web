@@ -30,7 +30,7 @@ const Text = (props) => {
     React.useEffect(() => {
         db.collection('users')
         .doc(props.user[1] || props.user.uid).collection('recognizedText').doc(props.match.params.id).get()
-        .then(doc => console.log(doc.data()) || setData(doc.data()))
+        .then(doc => setData(doc.data()))
     }, [])
 
     return (

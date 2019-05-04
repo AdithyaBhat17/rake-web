@@ -19,7 +19,6 @@ export default function Barcode (props) {
                     return {id: doc.id, ...doc.data()}
                 }) 
                 await setData(i)
-                console.log(data)
             })
         }
 
