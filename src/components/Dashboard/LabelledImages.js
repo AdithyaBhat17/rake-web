@@ -54,6 +54,12 @@ const LabelledImages = (props) => {
         })
     }
 
+    const labelSearch = async label => {
+        setOpenDialog(true)
+        const search_results = await searchAPI({q: label}, 'labelsearch')
+        setSearchResults(search_results)
+    }
+
     const delete_img = async id => {
         await db.collection('users').doc(props.user[1] || props.user.uid).collection('labelledImages').doc(id).delete()
         toast.success('👍 Deleted successfully!', {
