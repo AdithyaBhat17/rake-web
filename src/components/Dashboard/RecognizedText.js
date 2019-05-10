@@ -54,7 +54,7 @@ const RecognizedText = (props) => {
             <div className="container">
                 <div className="row">
                     <h1 className="welcome animated fadeIn">Here&#039;s what you&#039;ve recognized so far...</h1> <br/>
-                    {data.length > 0 ? data.sort((a,b) => b.timestamp.localeCompare(a.timestamp)).map(text => (
+                    {data.length > 0 ? data.sort((a,b) => b.timestamp.substring(4).localeCompare(a.timestamp.substring(4))).map(text => (
                         <div id={text.id} key={text.id} className="col-md-4 col-sm-12">
                             <div className="thumbnail timestamp">
                                 <Link
