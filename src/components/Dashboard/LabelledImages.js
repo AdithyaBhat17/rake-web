@@ -1,7 +1,7 @@
 import React from 'react'
 import { db } from '../../Firebase'
-import NavbarDash from './NavbarDash';
-import { logOut } from './index';
+import NavbarDash from './NavbarDash'
+import { logOut } from './index'
 import { SemipolarSpinner } from 'react-epic-spinners'
 import { Link } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
@@ -15,6 +15,7 @@ const LabelledImages = (props) => {
     let [loading, setLoading] = React.useState(true)
     const [openDialog, setOpenDialog] = React.useState(false)
     let [searchResults, setSearchResults] = React.useState(null)
+    let [labelSearch, setLabelSearch] = React.useState(false)
 
     React.useEffect(() => {
         const fetchUserData = () => {
@@ -33,7 +34,8 @@ const LabelledImages = (props) => {
 
     const searchImage = async image_url => {
         setOpenDialog(true)
-        const search_results = await searchAPI({image_url})
+        const search_results = await searchAPI({image_url}).catch(err => {return})
+        console.log(search_results)
         setSearchResults(search_results)
     }
 
@@ -54,9 +56,17 @@ const LabelledImages = (props) => {
         })
     }
 
-    const labelSearch = async label => {
+    const closeModalWithAlert = () => {
+        alert('Server Error! Please try another keyword.')
+        setOpenDialog(false)
+        setSearchResults(null)
+    }
+
+    const label_search = async label => {
         setOpenDialog(true)
         const search_results = await searchAPI({q: label}, 'labelsearch')
+        setLabelSearch(true)
+        console.log(search_results)
         setSearchResults(search_results)
     }
 
@@ -86,7 +96,13 @@ const LabelledImages = (props) => {
                                 <img src={img.imageFile} className="labelled-image" alt="labelled images"/>
                                 <div className="labels animated fadeIn">
                                     {img.labels.map((label, index) => index < 5 && (
-                                        <div key={index} className="label">{label}</div>
+                                        <div
+                                         key={index} 
+                                         style={{cursor: 'pointer'}} 
+                                         onClick={() => label_search(label)} 
+                                         className="label">
+                                         {label}
+                                        </div>
                                     ))}
                                 </div>
                                 <div className="flex-buttons animated fadeIn">
@@ -111,9 +127,11 @@ const LabelledImages = (props) => {
                     setSearchResults(null)
                  }}
                 >
-                    {(searchResults === null || searchResults.length === 0) ?
+                    {
+                        searchResults === undefined ? closeModalWithAlert() :
+                        (searchResults === null || searchResults.length === 0) ?
                         <SemipolarSpinner color='#2522a6' style={{display: 'block', margin: '15vh auto'}} /> : 
-                        <SearchResults data={searchResults} />
+                        <SearchResults data={searchResults} labelSearch={labelSearch} />
                     }
                 </Dialog>
             </div> <br/> <br/>
