@@ -4,7 +4,37 @@ const getLinkTitle = (link) => {
     return link.substring(link.indexOf('.') + 1, link.indexOf('.', link.indexOf('.') + 1))
 }
 
-const SearchResults = ({data}) => {
+const SearchResults = ({data, labelSearch}) => {
+    const [product, setProduct] = React.useState(null)
+    React.useEffect(() => {
+        if(labelSearch) {
+            const product = data.links.map((link, index) => ({link, title: data.titles[index]}))
+            console.log(product)
+            setProduct(product)
+        }
+    }, [])
+    if (labelSearch)
+        return (
+            <div style={{opacity: 0.9}}>
+                {product && product.map((item, index) => (
+                    <a
+                     key={index}
+                     href={`${item.link}`} 
+                     alt={item.title}
+                     className="label"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     style={{
+                         color: '#2522a6',
+                         display: 'block',
+                         fontSize: 14,
+                         fontWeight: 'bold',
+                         opacity: 0.8,
+                         marginTop: 10
+                     }}>{item.title}</a>
+                ))}
+            </div>
+        )
     return (
         <div style={{opacity: 0.9}}>
             <p>Best Guess: <strong style={{textTransform: 'capitalize'}}>{data.best_guess}</strong></p>
