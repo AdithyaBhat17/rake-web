@@ -60,6 +60,7 @@ const LabelledImages = (props) => {
         alert('Server Error! Please try another keyword.')
         setOpenDialog(false)
         setSearchResults(null)
+        setLabelSearch(false)
     }
 
     const label_search = async label => {
@@ -125,6 +126,7 @@ const LabelledImages = (props) => {
                  onClose={() => {
                     setOpenDialog(false)
                     setSearchResults(null)
+                    setLabelSearch(false)
                  }}
                 >
                     {
