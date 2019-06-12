@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import config from './Firebase'
 
-import Home from './components/Home'
-import About from './components/About'
 import PrivateRoute from './PrivateRoute'
-import Dashboard from './components/Dashboard'
-import LabelledImages from './components/Dashboard/LabelledImages'
-import Barcode from './components/Dashboard/Barcode'
-import RecognizedText from './components/Dashboard/RecognizedText'
-import Login from './components/Home/Login'
-import Text from './components/Dashboard/Text'
+import Home from './components/Home'
+import { SemipolarSpinner } from 'react-epic-spinners'
 
-export default function Routes() {
+const Login = lazy(() => import('./components/Home/Login'))
+const About = lazy(() => import('./components/About'))
+const Dashboard = lazy(() => import('./components/Dashboard'))
+const LabelledImages = lazy(() => import('./components/Dashboard/LabelledImages'))
+const Barcode = lazy(() => import('./components/Dashboard/Barcode'))
+const RecognizedText = lazy(() => import('./components/Dashboard/RecognizedText'))
+const Text = lazy(() => import('./components/Dashboard/Text'))
+
+export default function Routes(props) {
     const [authenticated, setAuthenticated] = useState(JSON.parse(localStorage.getItem('authenticated')))
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('currentUser')))
 
@@ -35,48 +37,54 @@ export default function Routes() {
         })
     })
 
+    const loading = () => (
+        <SemipolarSpinner color='#2522a6' style={{display: 'block', margin: '45vh auto'}} />
+    )
+
     return (
-        <Router>
-            <React.Fragment>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/about" component={About}/>
-                <Route exact path="/login" component={Login} />
-                <PrivateRoute
-                 exact 
-                 path="/dashboard" 
-                 component={Dashboard} 
-                 authenticated={authenticated}
-                 user={user}
-                />
-                <PrivateRoute
-                 exact
-                 path="/dashboard/recognized-text"
-                 authenticated={authenticated}
-                 user={user}
-                 component={RecognizedText}
-                />
-                <PrivateRoute
-                 exact
-                 path="/dashboard/recognized-text/:id"
-                 authenticated={authenticated}
-                 user={user}
-                 component={Text}
-                />
-                <PrivateRoute
-                 exact
-                 path="/dashboard/scanned-barcodes"
-                 authenticated={authenticated}
-                 user={user}
-                 component={Barcode}
-                />
-                <PrivateRoute
-                 exact
-                 path="/dashboard/labelled-images"
-                 authenticated={authenticated}
-                 user={user}
-                 component={LabelledImages}
-                />
-            </React.Fragment>
-        </Router>
+        <Suspense fallback={loading}>
+            <Router>
+                <React.Fragment>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/about" component={() => <About />}/>
+                    <Route exact path="/login" component={(props) => <Login {...props} />} />
+                    <PrivateRoute
+                     exact 
+                     path="/dashboard" 
+                     component={(props) => <Dashboard {...props} />} 
+                     authenticated={authenticated}
+                     user={user}
+                    />
+                    <PrivateRoute
+                     exact
+                     path="/dashboard/recognized-text"
+                     authenticated={authenticated}
+                     user={user}
+                     component={(props) => <RecognizedText {...props} />}
+                    />
+                    <PrivateRoute
+                     exact
+                     path="/dashboard/recognized-text/:id"
+                     authenticated={authenticated}
+                     user={user}
+                     component={(props) => <Text {...props} />}
+                    />
+                    <PrivateRoute
+                     exact
+                     path="/dashboard/scanned-barcodes"
+                     authenticated={authenticated}
+                     user={user}
+                     component={(props) => <Barcode {...props} />}
+                    />
+                    <PrivateRoute
+                     exact
+                     path="/dashboard/labelled-images"
+                     authenticated={authenticated}
+                     user={user}
+                     component={(props) => <LabelledImages {...props} />}
+                    />
+                </React.Fragment>
+            </Router>
+        </Suspense>
     )
 }
