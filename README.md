@@ -6,8 +6,7 @@ https://rake.now.sh (mobile app still in progress)
 
 ## Contributors
 
-[Adithya NR](https://adithyabhat.com)  -  Front-End Engineer, IDF certified UX Designer  
-[Apeksha Joshi](https://github.com/apeksha-joshi) 
+[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/0)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/0)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/1)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/1)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/2)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/2)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/3)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/3)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/4)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/4)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/5)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/5)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/6)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/6)[![](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/images/7)](https://sourcerer.io/fame/AdithyaBhat17/AdithyaBhat17/rake-web/links/7)
 
 ## License
 
